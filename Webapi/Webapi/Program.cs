@@ -1,4 +1,4 @@
-var builder = WebApplication.CreateBuilder(args);
+﻿var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
@@ -8,6 +8,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+//if (!app.Environment.IsDevelopment())
+//{
+//    app.UseHsts(); // Chỉ sử dụng khi máy chủ đã có ssl, vì đây là lệnh buột cho client phải sử dụng https
+//}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
